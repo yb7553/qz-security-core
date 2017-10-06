@@ -2,9 +2,17 @@ package com.qz.security.core.properties;
 
 public class BrowserProperties {
 	
-	private String loginPage = "/qz-signIn.html";
-
-	private LoginType loginType = LoginType.JSON;
+	private SessionProperties session = new SessionProperties();
+	
+	private String signUpUrl = "/qz-signUp.html";
+	
+	private String signOutUrl;
+	
+	private String loginPage = SecurityConstants.DEFAULT_LOGIN_PAGE_URL;
+	
+	private LoginResponseType loginType = LoginResponseType.JSON;
+	
+	private int rememberMeSeconds = 3600;
 
 	public String getLoginPage() {
 		return loginPage;
@@ -14,12 +22,44 @@ public class BrowserProperties {
 		this.loginPage = loginPage;
 	}
 
-	public LoginType getLoginType() {
+	public LoginResponseType getLoginType() {
 		return loginType;
 	}
 
-	public void setLoginType(LoginType loginType) {
+	public void setLoginType(LoginResponseType loginType) {
 		this.loginType = loginType;
+	}
+
+	public int getRememberMeSeconds() {
+		return rememberMeSeconds;
+	}
+
+	public void setRememberMeSeconds(int rememberMeSeconds) {
+		this.rememberMeSeconds = rememberMeSeconds;
+	}
+
+	public String getSignUpUrl() {
+		return signUpUrl;
+	}
+
+	public void setSignUpUrl(String signUpUrl) {
+		this.signUpUrl = signUpUrl;
+	}
+
+	public SessionProperties getSession() {
+		return session;
+	}
+
+	public void setSession(SessionProperties session) {
+		this.session = session;
+	}
+
+	public String getSignOutUrl() {
+		return signOutUrl;
+	}
+
+	public void setSignOutUrl(String signOutUrl) {
+		this.signOutUrl = signOutUrl;
 	}
 	
 }
